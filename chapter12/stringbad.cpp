@@ -15,6 +15,7 @@ public:
     Stringbad(const Stringbad &);
     ~Stringbad();
     Stringbad & operator=(const Stringbad &);
+    static int HowMany(){return num_strings;}
 friend ostream & operator<<(ostream & os, const Stringbad & st);
 };
 

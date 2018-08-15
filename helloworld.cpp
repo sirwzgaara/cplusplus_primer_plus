@@ -2,14 +2,17 @@
 #include <iostream>
 using namespace std;
 
-enum class : short egg
+class Test
 {
-    small,
-    large
+    private:
+            const int i;
+    public:
+                Test() : i(0){}
+
 };
 
 int main()
 {
- //   int i = egg::small;
+    Test tmp;
     return 1;
 }
