@@ -2,11 +2,14 @@
 #include <iostream>
 using namespace std;
 
+enum class :short Test1
+{
+    i = 1
+};
+
+
 
 int main()
 {
-    int *p;
-    const char *a;
-    a = reinterpret_cast<char *>(p);
     return 1;
 }
