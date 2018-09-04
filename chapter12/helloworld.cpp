@@ -4,20 +4,18 @@ using namespace std;
 
 class Test
 {
-private:
-    int i;
 public:
-    Test(){}
-    Test(int n){}
-    Test(const Test & t){cout << 2 << endl;}
-    ~Test(){cout << 1 << endl;}
-    Test & operator=(const Test & t){cout << 3 << endl;}
+    virtual void lala()=0;
+} ;
+
+class Child : public Test
+{
+public:
+    virtual void lala(){}
 };
 
 int main()
 {
-    Test t;
-    int n = 21;
-    t = n;
+    Child tmp;
     return 1;
 }
