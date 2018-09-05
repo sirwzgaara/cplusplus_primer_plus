@@ -4,11 +4,18 @@
 using namespace std;
 
 
+void func()
+{
+    double gpa[5] = {3.1, 3.5, 3.8, 2.9, 3.3};
+    valarray<double> v1;
+    valarray<int> v2(8);
+    valarray<int> v3(10, 8);
+    valarray<double> v4(gpa, 4);
+    valarray<double> v5 = {1, 2};
+}
 
 int main()
 {
-    double gpa[5] = {1.1, 1.2, 1.3, 1.4, 1.5};
-    valarray<double> v(gpa, 4);
-    cout << v[3] << endl;
+    func();
     return 1;
 }

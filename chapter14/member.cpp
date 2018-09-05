@@ -16,8 +16,8 @@ private:
         void show() const {cout << val << endl;}
         V Value() const {return val;}
     };
-    hold<T> q;
-    hold<int> n;
+    hold<T> q;      //一个泛型成员
+    hold<int> n;    //一个具体化成员
 public:
     beta(T t, int i) : q(t), n(i){}
     template <typename U>
@@ -32,7 +32,15 @@ template <typename T>
         return (n.Value() + q.Value()) * u / t;
     }
 
+void func()
+{
+    beta<double> guy(3.5, 3);
+    guy.Show();
+    cout << guy.blab(10, 2.3) << endl;
+}
+
 int main()
 {
+    func();
     return 1;
 }

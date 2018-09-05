@@ -18,7 +18,7 @@ public:
 };
 
 /* 第一个从Worker继承的类 */
-class Waiter : public Worker
+class Waiter : virtual public Worker
 {
 private:
     int panache;
@@ -30,7 +30,8 @@ public:
     void Show() const;
 };
 
-class Singer : public Worker
+/* 第二个从Worker继承的类 */
+class Singer : virtual public Worker
 {
 protected:
     enum {other, alto, contralto, soprano, bass, baritone, tonor};
@@ -48,12 +49,13 @@ public:
 
 class SingingWaiter : public Singer, public Waiter
 {
-    
+public:
+    void Set(){}
 };
 
 int main()
 {
-    SingingWaiter tmp;
-    Worker &t = (Singer &)tmp;
+    SingingWaiter s;
+    Worker *p = &s;
     return 1;
 }

@@ -2,26 +2,17 @@
 #include <iostream>
 using namespace std;
 
-class Test1
+template <typename T1, typename T2 = int>
+class Test
 {
-    public:
-        void func(){}
 };
 
-class Test2 : public Test1
-{
-    private:
-        void func(){}
-};
-
-class Test3 : public Test2
-{
-
-};
+template<>
+class Test<double>
+{};
 
 int main()
 {
-    Test3 tmp;
-    tmp.func();
+    Test<int> tmp;
     return 1;
 }
