@@ -2,9 +2,9 @@
 #include <iostream>
 using namespace std;
 
-//#define FIRST
-//define SECOND
-#define THIRD
+#define FIRST
+//#define SECOND
+//#define THIRD
 
 /* 非模板友元 */
 
@@ -30,6 +30,16 @@ void counts()
 {
     cout << HasFriend<int>::ct << endl;
     cout << HasFriend<double>::ct << endl;
+}
+
+void reports(HasFriend<int> & hf)
+{
+    cout << hf.item << endl;
+}
+
+void reports(HasFriend<double> & hf)
+{
+    cout << hf.item << endl;
 }
 
 #endif
@@ -101,8 +111,5 @@ void show(U u, V v)
 
 int main()
 {
-    HasFriend<int> hfi1(10);
-    HasFriend<int> hfi2(20);
-    show(hfi1, hfi2);
     return 1;
 }
