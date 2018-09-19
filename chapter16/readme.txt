@@ -6,4 +6,5 @@ map.cpp         用来研究map容器
 itorator.cpp    用来研究iterator
 list.cpp        用来研究list
 set.cpp         用来研究set
+func.cpp        预定义函数符
 
