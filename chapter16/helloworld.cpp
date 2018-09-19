@@ -1,18 +1,24 @@
 
 #include <iostream>
 #include <string>
-#include <cstdio>
+#include <iterator>
+#include <algorithm>
+#include <functional>
+
 using namespace std;
 
-class empty
+void func()
 {
-
-};
+    int i = 0;
+    while (i--)
+    {
+        break;
+    }
+    cout << i << endl;
+}
 
 int main()
 {
-    double prices[5] = {1.0, 2.0, 3.0, 4.0, 5.0};
-    for (double x : prices)
-        cout << x << endl;
+    func();
     return 1;
 }
