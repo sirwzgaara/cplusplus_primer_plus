@@ -4,6 +4,8 @@
 #include <iterator>
 #include <algorithm>
 #include <functional>
+#include <vector>
+#include <set>
 
 using namespace std;
 
@@ -19,6 +21,6 @@ void func()
 
 int main()
 {
-    func();
+	set<string, less<string> >i;
     return 1;
 }
