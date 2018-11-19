@@ -1,30 +1,50 @@
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
-class Test1
+class Test
 {
 private:
-    int i;
+    char * str;
 public:
-    Test1(int ii = 2){i = ii;}
-friend void func1(const Test1 & t1){cout << t1.i << endl;}
+    Test(){str = NULL;}
+    Test(const char *);
+    Test(const Test &);
+    Test & operator=(const Test &);
+    ~Test();
 };
 
-class Test2 : public Test1
+Test::Test(const char * s)
 {
-private:
-    int j;
-public:
-    Test2(){}
-friend void func2(const Test2 & t2){func1(t2);cout << "hhhh" << endl;}
-};
+    str = new char [strlen(s)];
+    strcpy(str, s);
+}
 
+Test::Test(const Test & t)
+{
+    str = new char[strlen(t.str)];
+    strcpy(str, t.str);
+}
+
+Test & Test::operator=(const Test &t)
+{
+    if (this != &t)
+    {
+        Test local(t);
+        char * tmp = str;
+        str = local.str;
+        local.str = tmp;
+    }
+    return *this;
+}
+
+Test::~Test()
+{
+    delete [] str;
+}
 
 int main()
 {
-    Test1 t1(10);
-    Test2 t2;
-    func2(t2);
     return 1;
 }
