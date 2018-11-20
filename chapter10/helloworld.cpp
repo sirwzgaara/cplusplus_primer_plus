@@ -1,15 +1,15 @@
 
 #include <iostream>
+#include "stock.h"
 using namespace std;
 
-enum class :short Test1
+
+void func()
 {
-    i = 1
-};
-
-
+}
 
 int main()
 {
+    func();
     return 1;
 }
