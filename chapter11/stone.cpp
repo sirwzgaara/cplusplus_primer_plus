@@ -17,7 +17,7 @@ public:
     void show_lbs() const;
     void show_stn() const;
     /* 转换函数 */
-    operator double() const;
+    explicit operator double() const;
     operator int() const;
 };
 
