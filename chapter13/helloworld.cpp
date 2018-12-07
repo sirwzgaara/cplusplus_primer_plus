@@ -3,48 +3,26 @@
 #include <cstring>
 using namespace std;
 
-class Test
+class Brass
 {
-private:
-    char * str;
-public:
-    Test(){str = NULL;}
-    Test(const char *);
-    Test(const Test &);
-    Test & operator=(const Test &);
-    ~Test();
+protected:
+    int i;
 };
 
-Test::Test(const char * s)
+class BrassPlus : public Brass
 {
-    str = new char [strlen(s)];
-    strcpy(str, s);
-}
+public:
+    void test(){i = 1;}
+};
 
-Test::Test(const Test & t)
+void func()
 {
-    str = new char[strlen(t.str)];
-    strcpy(str, t.str);
-}
-
-Test & Test::operator=(const Test &t)
-{
-    if (this != &t)
-    {
-        Test local(t);
-        char * tmp = str;
-        str = local.str;
-        local.str = tmp;
-    }
-    return *this;
-}
-
-Test::~Test()
-{
-    delete [] str;
+    BrassPlus a;
+    a.test();
 }
 
 int main()
 {
+    func();
     return 1;
 }
